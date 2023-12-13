@@ -378,10 +378,45 @@ import time
 # except (ValueError, ZeroDivisionError):
 #     print("Improper value was obtained")
 
-for i in range(1, 10):
-    print('1')
-    for j in range(1, 10):
-        print('\t2')
-        for j in range(1, 10):
-            print('\t\t3')
+# for i in range(1, 10):
+#     print('1')
+#     for j in range(1, 10):
+#         print('\t2')
+#         for j in range(1, 10):
+#             print('\t\t3')
     #print()
+
+
+# A = [[20, 4, 9],
+#      [1, 9, 87],
+#      [22, 56, 0]]
+#
+# for row in A:
+#     for elen in row:
+#         print(elen, end='\t|')
+#     print()
+
+
+a = [1, 2, 3]
+b = a
+b[0] = 5
+print(a, b)
+
+a = [1, 2, 3]
+b = a.copy()
+b[0] = 5
+print(a, b)
+
+# CASE 1
+a = [1, 2, [3, 4, 5]]
+b = a.copy()
+b[2][0] = 10
+print(a, b)
+
+
+from copy import deepcopy
+
+a = [1, 2, [3, 4, 5]]
+b = deepcopy(a)
+b[2][0] = 10
+print(a, b)
