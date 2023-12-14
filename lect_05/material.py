@@ -455,3 +455,59 @@ for i in lst_1:
 		lst_2.append(i)
 		
 print(lst_2)
+
+my_str = '6emds83mmsad99342n42ld9xm37vn4820'
+my_lst2 = [i for i in my_str if i.isnumeric()]
+print(my_lst2)
+#['6', '8', '3', '9', '9', '3', '4', '2', '4', '2', '9', '3', '7', '4', '8', '2', '0']
+# unpacking list
+
+lst = [1, 2, 3, 4, 5]
+lst2 = ['a', 'b', 'c', 'd', 'e']
+
+print(*lst)
+print(*lst2)
+###
+lst = [7, 6, 0, 9, 5, 3, 2, 8, 1]
+lst.sort()
+print(lst)
+
+lst.sort(reverse=True)
+print(lst)
+
+my_lst = ['яблоко', 'ананас', 'груша']
+my_lst.sort()
+print(my_lst)
+
+my_lst.sort(reverse=True)
+print(my_lst)
+###
+# 3,4,2,7,8,9,1,11,2,56,2,6,81
+
+#st = [int(i) for i in input().split(',')]
+#lst_odd = [i for i in st if i % 2 != 0]
+#lst_even = [i for i in st if i % 2 == 0]
+#print(*lst_odd)
+#print(*lst_even)
+
+###
+# кіт осел пес авто
+vowels = 'аиеоуієюя'
+st = input().split()
+
+#lst1 = [i for i in st if i[0] in vowels]
+#lst2 = [i for i in st if i not in lst1]
+# АБО
+lst1 = []
+lst2 = []
+
+for i in st:
+	if i[0] in vowels:
+		lst1.append(i)
+	else:
+		lst2.append(i)
+
+
+print(*lst1)
+print(*lst2)
+
