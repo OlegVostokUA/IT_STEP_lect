@@ -426,3 +426,32 @@ my_lst = list(map(int,input().split()))
 # 3 4 5 2 3 4 5 6 1 2 8	
 print(my_lst)
 # [3, 4, 5, 2, 3, 4, 5, 6, 1, 2, 8]
+
+my_lst = list(range(5))
+print(my_lst)
+# [0, 1, 2, 3, 4]
+my_lst = list(range(1, 25, 2))
+print(my_lst)
+# [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23]
+
+my_lst = []
+
+for i in range(1, 21):
+	if i % 2 == 0:
+		my_lst.append(i)
+print(my_lst)
+
+my_lst = [i for i in range(1, 21) if i % 2 == 0]
+print(my_lst)
+# [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]
+
+lst_1 = [1, 2, 2, 3]
+print(2 in lst_1)
+print(4 in lst_1)
+lst_2 =[]
+
+for i in lst_1:
+	if i not in lst_2:
+		lst_2.append(i)
+		
+print(lst_2)
