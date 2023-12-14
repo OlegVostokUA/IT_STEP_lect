@@ -422,7 +422,7 @@ b[2][0] = 10
 print(a, b)
 
 
-my_lst = list(map(int,input().strip().split()))
+my_lst = list(map(int,input().split()))
 # 3 4 5 2 3 4 5 6 1 2 8	
 print(my_lst)
 # [3, 4, 5, 2, 3, 4, 5, 6, 1, 2, 8]
