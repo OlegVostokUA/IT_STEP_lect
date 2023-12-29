@@ -8,13 +8,20 @@ class Drawing:
         self.window = window
         self.m_map_scr = m_map_scr
         self.font = pygame.font.SysFont('Arial', 36, bold=True)
+        self.texture = {'1': pygame.image.load('textures/wals.jpg').convert(),
+                         '2': pygame.image.load('textures/wals2.jpg').convert(),
+                         'S': pygame.image.load('textures/sky.png').convert()
+                         }
 
-    def background(self):
-        pygame.draw.rect(self.window, SKYBLUE, (0, 0, WIDTH, HALF_HEIGHT))
+    def background(self, angle):
+        sky_offset = -5 * math.degrees(angle) % WIDTH
+        self.window.blit(self.texture['S'], (sky_offset, 0))
+        self.window.blit(self.texture['S'], (sky_offset - WIDTH, 0))
+        self.window.blit(self.texture['S'], (sky_offset + WIDTH, 0))
         pygame.draw.rect(self.window, DARKGRAY, (0, HALF_HEIGHT, WIDTH, HALF_HEIGHT))
 
     def world(self, player_pos, player_angle):
-        ray_casting(self.window, player_pos, player_angle)
+        ray_casting(self.window, player_pos, player_angle, self.texture)
 
     def fps(self, clock):
         display_fps = str(int(clock.get_fps()))

@@ -22,7 +22,7 @@ while play:
     player.movement()
     window.fill(BLACK)
     ###
-    drawing.background()
+    drawing.background(player.angle)
     drawing.world(player.pos, player.angle)
     drawing.fps(clock)
     drawing.m_map_draw(player)
