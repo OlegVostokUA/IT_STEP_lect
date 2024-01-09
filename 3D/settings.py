@@ -5,6 +5,7 @@ HALF_WIDTH = WIDTH // 2
 HALF_HEIGHT = HEIGHT // 2
 FPS = 60
 TILE = 50
+FPS_POS = (WIDTH - 65, 5)
 
 # R_C settings
 FOV = math.pi / 3
@@ -28,17 +29,25 @@ player_angle = 0
 player_speed = 2
 
 # minimap settings
-MAP_SCALE = 5
+MAP_SCALE = 6
 MAP_TILE = TILE // MAP_SCALE
 MAP_POS = (0, HEIGHT - HEIGHT // MAP_SCALE)
+
+# sprite settings
+DOUBLE_PI = math.pi * 2
+CENTER_RAY = NUM_RAYS // 2 - 1
+FAKE_RAYS = 100
 
 # colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (220, 0, 0)
-GREEN = (0, 220, 0)
-BLUE = (0, 0, 220)
-DARKGRAY = (110, 110, 110)
+GREEN = (0, 80, 0)
+BLUE = (0, 0, 255)
+DARKGRAY = (40, 40, 40)
 PURPLE = (120, 0, 120)
 SKYBLUE = (0, 186, 255)
 YELLOW = (220, 220, 0)
+SANDY = (244, 164, 96)
+DARKBROWN = (97, 61, 25)
+DARKORANGE = (255, 140, 0)

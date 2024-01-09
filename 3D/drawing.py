@@ -14,27 +14,29 @@ class Drawing:
                          }
 
     def background(self, angle):
-        sky_offset = -5 * math.degrees(angle) % WIDTH
+        sky_offset = -15 * math.degrees(angle) % WIDTH
         self.window.blit(self.texture['S'], (sky_offset, 0))
         self.window.blit(self.texture['S'], (sky_offset - WIDTH, 0))
         self.window.blit(self.texture['S'], (sky_offset + WIDTH, 0))
         pygame.draw.rect(self.window, DARKGRAY, (0, HALF_HEIGHT, WIDTH, HALF_HEIGHT))
 
-    def world(self, player_pos, player_angle):
-        ray_casting(self.window, player_pos, player_angle, self.texture)
+    def world(self, world_objects):
+        for obj in sorted(world_objects, key=lambda n: n[0], reverse=True):
+            if obj[0]:
+                _, object, object_pos = obj
+                self.window.blit(object, object_pos)
 
     def fps(self, clock):
         display_fps = str(int(clock.get_fps()))
-        render = self.font.render(display_fps, 0, RED)
-        self.window.blit(render, (WIDTH - 65, 5))
+        render = self.font.render(display_fps, 0, DARKORANGE)
+        self.window.blit(render, FPS_POS)
 
-    def m_map_draw(self, player):
+    def mini_map(self, player):
         self.m_map_scr.fill(BLACK)
         map_x, map_y = player.x // MAP_SCALE, player.y // MAP_SCALE
-
-        pygame.draw.line(self.m_map_scr, YELLOW, (map_x,map_y), (map_x + 12 * math.cos(player.angle),
+        pygame.draw.line(self.m_map_scr, YELLOW, (map_x, map_y), (map_x + 12 * math.cos(player.angle),
                                                  map_y + 12 * math.sin(player.angle)), 2)
         pygame.draw.circle(self.m_map_scr, RED, (int(map_x), int(map_y)), 5)
-        for x,y in mini_map: # world_map_2
-            pygame.draw.rect(self.m_map_scr, GREEN, (x, y, MAP_TILE, MAP_TILE))
+        for x, y in mini_map:
+            pygame.draw.rect(self.m_map_scr, DARKBROWN, (x, y, MAP_TILE, MAP_TILE))
         self.window.blit(self.m_map_scr, MAP_POS)

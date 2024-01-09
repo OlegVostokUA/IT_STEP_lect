@@ -30,7 +30,22 @@ text_map_2 = [
     'WWWWWWWWWWWWWWWW'
 ]
 
-text_map = text_map_2
+text_map_3 = [
+    'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW',
+    'W............X.......X......X.W',
+    'W..XXX....XXXX.....X...XXXX...W',
+    'WX...........X.....X....XXX...W',
+    'W..XXX.............X..........W',
+    'W....X.......X.....XXXX.....XXW',
+    'W....X.....XXX...........X....W',
+    'W..XXX.......X...X.....XXX....W',
+    'W................XXXXXXX......W',
+    'WX...XX..XX..X...X........XX..W',
+    'W............X.......XX.......W',
+    'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW'
+]
+
+text_map = text_map_3
 
 world_map = set()
 mini_map = set()
