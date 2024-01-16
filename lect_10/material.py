@@ -332,6 +332,7 @@ calculate(2, 25)
 
 
 
+
 ## functools
 ### CASE 9
 from functools import partial

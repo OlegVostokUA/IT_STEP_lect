@@ -1,20 +1,20 @@
-###
+# ## SORT!!!!!!!!
 # example_list = [4, -2, 1, -5, 8]
 #
 # example_list.sort()
 # print(example_list) # [-5, -2, 1, 4, 8]
 # example_list.sort(reverse=True)
 # print(example_list) # [8, 4, 1, -2, -5]
-###
-# |NOT SORT!!!
-# no change collection - (3, 4, 1) - Tuple
-# no indexing collection - {3, 4, 1} - set
-# op types in structure - [1, 2, 'Hello']
-###
-# BUBBLE SORT
-unsort_list = [5, 2, 4, 7, 6] # [5,4,3,1,2] = 1
-
-
+# ##
+# # |NOT SORT!!!
+# # no change collection - (3, 4, 1) - Tuple
+# # no indexing collection - {3, 4, 1} - set
+# # op types in structure - [1, 2, 'Hello']
+# ###
+# # BUBBLE SORT
+# unsort_list = [5, 2, 4, 7, 6] # [5,4,3,1,2] = 1
+#
+#
 # for i in range(len(unsort_list)-1):
 #     for j in range(len(unsort_list)-i-1):
 #         if unsort_list[j] < unsort_list[j+1]:
@@ -24,8 +24,8 @@ unsort_list = [5, 2, 4, 7, 6] # [5,4,3,1,2] = 1
 #
 # for index, elem in enumerate(unsort_list):
 #     print(f"element {index + 1}: {elem}")
-
-# upgrade method
+#
+# ### upgrade method BUBBLE SORT
 # count_sort = 0
 #
 # for i in range(len(unsort_list)-1):
@@ -45,9 +45,9 @@ unsort_list = [5, 2, 4, 7, 6] # [5,4,3,1,2] = 1
 #     print(f"element {index + 1}: {elem}")
 #
 # print(count_sort)
-
-####
-# shell sort alg.
+#
+# ####
+# # shell sort alg.
 # unsorted = [33, 31, 40, 8, 12, 17, 25, 42]
 #
 # # итерация по неотсортированным массивам
@@ -66,8 +66,15 @@ unsort_list = [5, 2, 4, 7, 6] # [5,4,3,1,2] = 1
 #     unsorted[hole] = val
 #
 # print(unsorted)
+#
+# ###
+# # merge sort
+# # unsorted = [33, 31, 40, 8, 12, 17, 25, 42]
+#
+#
+# # Приклад використання функції для діапазону від 0 до 50
+# start_range = 0
+# end_range = 50
 
-###
-# merge sort
-# unsorted = [33, 31, 40, 8, 12, 17, 25, 42]
-
+# fibonacci_numbers = list(fibonacci_range(start_range, end_range))
+# print(f"Fibonacci numbers in the range ({start_range}, {end_range}): {fibonacci_numbers}")
