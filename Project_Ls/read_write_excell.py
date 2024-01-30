@@ -67,7 +67,7 @@ class Window(QWidget):
                 sheet_main.cell(column=column_numb, row=row).value = val
                 row += 1
             col_index += 1
-        # variant. But ....
+        # variant. But ...
         new_filename = m_file.split('.')
         new_filename.insert(1, date)
         new_filename[2] = '.xlsx'
@@ -93,7 +93,7 @@ class MainWindow(QMainWindow):
 
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)  # create app
+    app = QApplication(sys.argv) # create app
     dlgMain = MainWindow() # build object of class "DlgMain" and set here in variable "dlgMain"
     dlgMain.show() # show function
     sys.exit(app.exec_())  # loop app in "sys.exit" func for check logs
