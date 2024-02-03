@@ -38,21 +38,29 @@ class Window(QWidget):
             read_data = openpyxl.load_workbook(f_dir+'/'+file)
             sheet_1 = read_data.sheetnames[0]
             sheet = read_data[sheet_1]
-            columns = [2, 4, 6, 8, 10, 12] # ????
+            columns = [2, 3, 4, 5, 10, 12] # ????
 
             for coll in columns:
                 mark = sheet.cell(column=coll, row=6).value
                 if mark == None:
                     break
                 val_list = []
+                count = 0
                 for row in range(6, 119):
                     val = sheet.cell(column=coll, row=row).value
                     if val == None:
                         val = 0
                     if type(val) == float or type(val) == int:
-                        val = locale.str(val)
+                        if count > 22:
+                            if val == 0:
+                                val = '0,000'
+                            else:
+                                val = round((val / 1000), 3)
+                                val = locale.str(val)
+                    count += 1
                     val_list.append(val)
                 val_massive.append(val_list)
+        #print(val_massive)
 
         open_file = openpyxl.load_workbook(m_file)
         sheet_main_1 = open_file.sheetnames[0]
@@ -84,7 +92,7 @@ class WindowAuthor(QWidget):
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__() # initialization widgets and properties Parent class "QDialog"
-        self.setWindowTitle('Документ Парсер')
+        self.setWindowTitle('Документ Парсер             (розроблено OlegVostokUA)')
         self.setWindowIcon(QtGui.QIcon('img/software.png'))
         self.resize(600, 300) # set size window
         self.main_widget = QTabWidget()
