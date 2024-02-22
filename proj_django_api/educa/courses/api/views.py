@@ -8,6 +8,9 @@ from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import viewsets
 from .serializers import CourseSerializer
+from .permissions import IsEnrolled
+from .serializers import CourseWithContentsSerializer
+from rest_framework.decorators import action
 
 class SubjectListView(generics.ListAPIView):
     queryset = Subject.objects.all()
@@ -33,3 +36,9 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
 
+    @action(methods=['get'], detail=True,
+                  # serializer_class=CourseWithContentsSerializer,
+                  # authentication_classes=[BasicAuthentication],
+                  permission_classes=[IsAuthenticated, IsEnrolled])
+    def contents(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
