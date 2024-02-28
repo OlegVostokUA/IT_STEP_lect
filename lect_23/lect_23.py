@@ -1,12 +1,12 @@
 from abc import ABC, abstractmethod
 
 
-# class Man:
-#     def __init__(self, name):
-#         self.name = name
-#
-#     def say(self):
-#         print(f'Hello. My nameis {self.name}')
+class Man:
+    def __init__(self, name):
+        self.name = name
+
+    def say(self):
+        print(f'Hello. My nameis {self.name}')
 #
 #
 # class JetPack:
@@ -354,7 +354,7 @@ from abc import ABC, abstractmethod
 #     def prev_state(self):
 #         print('Yellow <<< Red')
 #         self.traf_light.set_state(YellowState())
-#
+# #
 #
 # tr_light1 = TrafficLight(GreenState())
 #
@@ -366,4 +366,3 @@ from abc import ABC, abstractmethod
 # tr_light1.prev_state()
 # tr_light1.prev_state()
 # tr_light1.prev_state()
-#
