@@ -210,4 +210,98 @@
 # result.paste(img_4, (img.shape[1],img.shape[0]))
 #
 # result.save("result.png", format="PNG")
-#dfsfdsfdsdffsdfsdfgdadgnhfesfresw
+
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+#
+# # Завантаження даних із файлу
+# data = np.genfromtxt('litecoin.csv', delimiter=',', skip_header=1, usecols=(1, 2, 3, 4, 5, 6))
+#
+# # Поділ даних на стовпці
+# open_prices, high_prices, low_prices, close_prices, adj_close_prices, volumes = data.T
+#
+# # Створення графіка ціни закриття
+# plt.plot(close_prices)
+#
+# # Налаштування осей
+# plt.xlabel('Місяць')
+# plt.ylabel('Ціна закриття')
+# plt.title('Вартість Litecoin за період з липня 2018 по червень 2023')
+#
+# # Встановлення значень на осі x
+# n = len (close_prices)
+# step = n // 10
+# plt.xticks(range(0, n, step))
+#
+# # Відображення графіка
+# plt.show()
+
+
+# import pandas as pd
+#
+# dataframe = pd.read_csv('data.csv')
+# series_1 = dataframe['столбец_1']
+# series_2 = dataframe['столбец_2']
+# series_3 = dataframe['столбец_3']
+#
+# print(series_1)
+# print(series_2)
+# print(series_3)
+
+
+# import pandas as pd
+#
+# # Чтение данных из файла CSV
+# dataframe = pd.read_csv('data.csv')
+#
+# # Вывод первых 2 строк DataFrame
+# print(dataframe.head(2))
+#
+# # Вывод последних 2 строк DataFrame
+# print(dataframe.tail(2))
+
+# # pip install openpyxl
+# import pandas as pd
+#
+# # читаем Excel файл
+# df = pd.read_excel('data.xlsx')
+#
+# # выводим DataFrame
+# print(df)
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+
+# загружаем данные из файла
+data = pd.read_csv('nvidia.csv')
+
+# преобразуем столбец 'Date' в формат datetime
+data['Date'] = pd.to_datetime(data['Date'])
+
+# создаем столбец 'YearMonth' с комбинированным значением года и месяца
+data['YearMonth'] = data['Date'].dt.to_period('M')
+
+# группируем данные по году и месяцу и вычисляем среднее значение цены закрытия
+monthly_data = data.groupby('YearMonth')['Close'].mean()
+
+# преобразуем индекс в тип datetime
+monthly_data.index = pd.to_datetime(monthly_data.index.to_timestamp())
+
+# строим график
+fig, ax = plt.subplots()
+ax.plot(monthly_data.index, monthly_data.values)
+
+# настройки оси X для отображения лет и месяцев
+ax.xaxis.set_major_locator(mdates.YearLocator())
+ax.xaxis.set_minor_locator(mdates.MonthLocator())
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
+
+plt.xlabel('Годы и месяцы')
+plt.ylabel('Средняя цена закрытия')
+plt.title('Ежемесячные колебания цен на акции Nvidia')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
