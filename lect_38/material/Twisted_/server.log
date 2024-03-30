@@ -1,0 +1,7 @@
+DEBUG:root:Traffic server init
+DEBUG:root:Traffic factory init
+DEBUG:root:Watch cars thread init
+DEBUG:root:Watch cars thread run
+DEBUG:root:Traffic server listen
+DEBUG:root:Connection made
+DEBUG:root:Connection made
