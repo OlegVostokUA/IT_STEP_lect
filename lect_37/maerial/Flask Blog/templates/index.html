@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Flask Blog {% endblock %}</h1>
+    {% for p in posts_html %}
+        <a href="{{ url_for('post', post_id=p['id']) }}">
+            <h3>{{ p['title'] }}</h3>
+        </a>
+        <span class="badge badge-primary">{{ p['created'] }}</span>
+    {% endfor %}
+
+
+{% endblock %}

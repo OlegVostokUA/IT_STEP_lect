@@ -1,0 +1,227 @@
+body {
+	font-family: Arial;
+	background-color: white;
+	
+}
+
+.usernamed {
+	font-size: 60px;
+	font-family: Old English Text MT;
+	padding-top: 1px;
+	padding-botton: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	margin-top: 1px;
+	margin-botton: 1px;
+	margin-left: 1px;
+	margin-right: 1px;
+	margin-botton: 10px;
+}
+
+.about_position {
+	font-family: Vivaldi;
+	font-weight: bold;
+	font-size: 45px;
+	line-height: 20px;
+	margin-botton: 5px;
+}
+
+.civil_position {
+    color: red
+    font-family: Tahoma;
+	font-weight: bold;
+	font-size: 25px;
+	line-height: 20px;
+	margin-botton: 25px;
+}
+
+
+h3 {
+	color: blueviolet;
+	font-family: Arial;
+	font-size: 25px;
+}
+
+.gen {
+	display: flex;
+	flex-direction: row-reverse;
+	background-color: #f5f7fa;
+	
+}
+.maincontent {
+	margin-top: 1px;
+	margin-botton: 1px;
+	margin-left: 1px;
+	margin-right: 1px;
+	padding-top: 20px;
+	padding-botton: 40px;
+	padding-left: 50px;
+	padding-right: 70px;
+	box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
+	
+}
+	
+.sidebar {
+	background-color: #1E2939;
+	color: white;
+	padding-top: 10px;
+	padding-botton: 1px;
+	padding-left: 10px; 
+	padding-right: 10px; 
+	margin-top: 5px;
+	margin-botton: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.about_tehnology {
+	padding-top: 1px;
+	padding-botton: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	margin-top: 1px;
+	margin-botton: 1px;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+.cont {
+	color: #f5f7fa;
+	font-family: Cooper;
+	margin-left: 5px;
+	margin-top: 10px;
+	font-size: 33px;
+}
+.photo {
+	width: 325px;
+	border: 3px solid grey;
+	border-radius: 25px;
+}
+
+.cont-link {
+	color: #565e6a;
+	font-size: 20px;
+	padding-left: 10px;
+}
+
+.cont-text {
+	margin-top: 1px;
+	padding: 0;
+	margin-left: 25px;
+	color: orange;
+	font-size: 20px;
+}
+
+.tech-skills-text {
+	color: #f5f7fa;
+	font-size: 25px;
+	font-family: Baskerville Old Face;
+}
+
+.about_work {
+	font-size: 35px;
+	font-family: Franclin Gothic;
+	font-weight: bold;
+	color: #1E2939;
+
+}
+
+h4 {
+	color: #1E2939;
+	font-size: 25px;
+	font-family: Trebuchet MS;
+	margin-botton: 10px;
+
+}
+
+.userinfo {
+	color: #1E2939;
+	font-size: 25px;
+	font-family: Californian FB;
+	padding-top: 1px;
+	padding-botton: 1px;
+	padding-left: 1px;
+	padding-right: 1px;
+	margin-top: 1px;
+	margin-botton: 1px;
+	margin-left: 1px;
+	margin-right: 1px;
+	width: 550px;
+	margin-right: 125px;
+}
+
+.about_work_list {
+	font-family: Bell MT;
+	font-size: 23px;
+	color: #1E2939;
+}
+
+.about_edu_list {
+	font-size: 18px;
+	font-family: Century Gothic;
+	color: #1E2939;
+	padding: 0;
+}
+
+.certif-link {
+	font-family: Century Gothic;
+	color: #1E2939;
+	font-size: 18px;
+}
+
+
+.pointion {
+	color: #E15113;
+}
+
+.about_work_list2 {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+
+.pointion_about_work_list {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+.user-link {
+	color: #1E2939;
+	font-size: 25px;
+	font-family: Californian FB;
+}
+
+.about_work_projects_list {
+	padding: 0;
+	margin-left: 25px;
+}
+
+.dates {
+	padding: 0;
+	color: #565e6a;
+	font-size: 20px;
+	margin: 0;
+	font-family: Vladimir Script;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
