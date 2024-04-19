@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}  Welcome  {% endblock %}
+
+{% block content %}
+    {% for post in posts_html %}
+        <a href="{{ url_for('post_render', post_id=post['id']) }}">
+            <h3>{{ post['title'] }}</h3>
+        </a>
+        <span class="badge badge-primary">{{ post['created'] }}</span>
+        <p>{{ post['content'] }}</p>
+        <a href="{{ url_for('edit', post_id=post['id']) }}">
+            <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+            <span class="badge badge-warning">Edit</span>
+        </a>
+        <hr>
+    {% endfor %}
+{% endblock %}

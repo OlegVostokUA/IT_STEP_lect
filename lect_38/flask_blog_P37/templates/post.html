@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}  Post: {{ post['title'] }}  {% endblock %}
+
+{% block content %}
+        <a href="#">
+            <h3>{{ post['title'] }}</h3>
+        </a>
+        <span class="badge badge-primary">{{ post['created'] }}</span>
+        <p>{{ post['content'] }}</p>
+        <a href="{{ url_for('edit', post_id=post['id']) }}">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <!--<span class="badge badge-warning">Edit</span>-->
+        </a>
+        <hr>
+{% endblock %}

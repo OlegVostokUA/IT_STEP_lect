@@ -190,6 +190,8 @@
 # # def select_data():
 # #     print(orm.select(p.url for p in Photo))
 
+######################################################################################
+
 import pymongo
 
 my_client = pymongo.MongoClient('mongodb://localhost:27017/')
@@ -197,7 +199,62 @@ my_client = pymongo.MongoClient('mongodb://localhost:27017/')
 my_db = my_client['my_database']
 
 my_col = my_db['customers']
+### work
+# my_d = {'name': 'J', 'addr': 'psd'}
+#
+# x = my_col.insert_one(my_d)
 
-my_d = {'name': 'J', 'addr': 'psd'}
+mylist = [
+  { "_id": 1, "name": "John", "address": "Highway 37"},
+  { "_id": 2, "name": "Peter", "address": "Lowstreet 27"},
+  { "_id": 3, "name": "Amy", "address": "Apple st 652"},
+  { "_id": 4, "name": "Hannah", "address": "Mountain 21"},
+  { "_id": 5, "name": "Michael", "address": "Valley 345"},
+  { "_id": 6, "name": "Sandy", "address": "Ocean blvd 2"},
+  { "_id": 7, "name": "Betty", "address": "Green Grass 1"},
+  { "_id": 8, "name": "Richard", "address": "Sky st 331"},
+  { "_id": 9, "name": "Susan", "address": "One way 98"},
+  { "_id": 10, "name": "Vicky", "address": "Yellow Garden 2"},
+  { "_id": 11, "name": "Ben", "address": "Park Lane 38"},
+  { "_id": 12, "name": "William", "address": "Central st 954"},
+  { "_id": 13, "name": "Chuck", "address": "Main Road 989"},
+  { "_id": 14, "name": "Viola", "address": "Sideway 1633"}
+]
 
-x = my_col.insert_one(my_d)
+# x = my_col.insert_many(mylist)
+
+# x = my_col.find_one()
+
+# x = my_col.find()
+
+# print(x)
+
+# for x in my_col.find():
+#     print(x)
+
+# my_query = {"address": "Ocean blvd 2"}
+# z = "^M"
+#
+# my_query = {"address": {"$regex": z}}
+
+# mydoc = my_col.find().sort('name', -1)
+#
+# for x in mydoc:
+#     print(x)
+
+
+# my_query = {"address": {"$regex": "^S"}}
+# new_val = {'$set': {"address": "NEW ADDRESS"}}
+#
+# my_col.update_many(my_query, new_val)
+
+# mydoc = my_col.find()
+#
+# for x in mydoc:
+#     print(x)
+
+# x = my_col.delete_many({})
+#
+# print(x.deleted_count)
+
+my_col.drop()
