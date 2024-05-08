@@ -14,13 +14,19 @@ class Window(QWidget):
     def __init__(self, parent=None):
         self.parent = parent
         super(Window, self).__init__()
-        self.make_file = QPushButton('   Почати заповнення')
+        self.make_file = QPushButton('   Почати заповнення "Залишки підрозділи"')
         self.make_file.setIcon(QtGui.QIcon('img/process.png'))
         self.make_file.clicked.connect(self.scrap_write)
+        #
+        self.make_file_2 = QPushButton('   Почати заповнення "Залишки ООДК"')
+        self.make_file_2.setIcon(QtGui.QIcon('img/process.png'))
+        self.make_file_2.clicked.connect(self.scrap_write_2)
 
         main_v_box = QVBoxLayout(self)
         main_v_box.addWidget(self.make_file)
+        main_v_box.addWidget(self.make_file_2)
 
+    # for button #1 functions
     def get_dir_path(self):
         self.files_directory_choice = QFileDialog.getExistingDirectory(self, 'Оберіть папку з вихідними файлами')
         return self.files_directory_choice
@@ -81,6 +87,42 @@ class Window(QWidget):
         new_filename[2] = '.xlsx'
         new_filename = ' '.join(new_filename)
         open_file.save(new_filename)
+
+    # for button #2 functions
+    def get_src_file_path(self):
+        self.files_directory_choice = QFileDialog.getOpenFileName(self, 'Оберіть вихідний файл')
+        return self.files_directory_choice[0]
+
+    def scrap_write_2(self):
+        src_file = self.get_src_file_path()
+        base_file = self.get_file_path()
+        read_data = openpyxl.load_workbook(src_file)
+        sheet_1 = read_data.sheetnames[0]
+        sheet = read_data[sheet_1]
+        columns = [2, 3]  # ????
+        val_massive = []
+        for coll in columns:
+            mark = sheet.cell(column=coll, row=5).value
+            if mark == None:
+                break
+            val_list = []
+            count = 0
+            for row in range(5, 10): # 5, 119
+                val = sheet.cell(column=coll, row=row).value
+                if val == None:
+                    val = 0
+                if type(val) == float or type(val) == int:
+                    #if count > 22:
+                        if val == 0:
+                            val = '0,00'
+                        else:
+                            val = round(val, 3)
+                            val = locale.str(val)
+                count += 1
+                val_list.append(val)
+            val_massive.append(val_list)
+        print(val_massive)
+        print('ok')
 
 
 class WindowAuthor(QWidget):
