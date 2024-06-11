@@ -58,5 +58,5 @@ def create_select_m2m():
 
     print(orm.select(p.url for p in Photo if t1 in p.tags)[:])
 
-#create_select_m2m()
+create_select_m2m()
 
